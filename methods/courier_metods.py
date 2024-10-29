@@ -12,6 +12,7 @@ class CourierMethods(BaseRequest):
         resp = self.post_request(BASE_URL,Courier.BASE,data=payload)
         return resp
 
+
     @allure.step(f'Запрос на регистрацию уже существующего пользователя {Courier.BASE}')
     def create_already_exists(self):
         resp = self.post_request(BASE_URL,Courier.BASE,data=AUTORISED_USER_PAYLOAD)
