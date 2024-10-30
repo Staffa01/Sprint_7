@@ -47,7 +47,7 @@ class TestCourier:
     @allure.title(f'Тест авторизации курьера с невалидными данными')
     @pytest.mark.parametrize('replace_param', ['login','password'])
     def test_courier_login_with_send_not_walid_param(self, replace_param):
-        resp = self.courier.login(replace = replace_param)
+        resp = self.courier.login(replace_param = replace_param)
         status = 404
         assert resp.status_code == status, assert_message(status, resp.status_code, resp.json())
         assert resp.json()['message'] == 'Учетная запись не найдена', f'Курьер авторизован {resp.json()}'

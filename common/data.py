@@ -8,6 +8,19 @@ AUTORISED_USER_PAYLOAD = {
 }
 AUTORISED_USER_ID = 407483
 ORDER_PAYLOAD = {}
+def generate_not_valid_courier_payload(not_send=None, replace=None):
+    payload = {
+    "login": "Ruslan",
+    "password": "qwerty"
+}
+    if not_send != None:
+        del payload[not_send]
+    elif replace != None:
+        letters = string.ascii_lowercase
+        random_string = ''.join(random.choice(letters) for i in range(6))
+        payload[replace] = random_string
+    return payload
+
 def generate_order_payload(color):
     def generate_random_string(leng):
         letters = string.ascii_lowercase

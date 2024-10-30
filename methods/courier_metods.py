@@ -19,13 +19,9 @@ class CourierMethods(BaseRequest):
         return resp
     
     @allure.step(f'Запрос на авторизацию {Courier.LOGIN}')
-    def login(self, not_send = None, replace = None):
-        if not_send != None:
-            payload = AUTORISED_USER_PAYLOAD
-            del payload[not_send]
-        elif replace != None:
-            payload = AUTORISED_USER_PAYLOAD
-            payload[replace] = generate_register_payload(10)
-        resp = self.post_request(BASE_URL,Courier.LOGIN,data=AUTORISED_USER_PAYLOAD)
+    def login(self, not_send = None, replace_param = None):
+        payload = generate_not_valid_courier_payload(not_send, replace_param)
+        print(payload)
+        resp = self.post_request(BASE_URL, Courier.LOGIN, data=payload)
         return resp
     
