@@ -5,4 +5,3 @@ pytest --alluredir=allure_results
 allure serve allure_results
 -s печатать print
 -v подробный лог
-pytest -v -s --alluredir=allure_results 
