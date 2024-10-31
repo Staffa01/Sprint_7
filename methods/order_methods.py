@@ -1,6 +1,6 @@
 from .base_requests import BaseRequest
 from common.endpoints import *
-from common.data import *
+from common.helpers import *
 import allure
 
 
