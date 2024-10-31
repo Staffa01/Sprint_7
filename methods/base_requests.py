@@ -15,7 +15,7 @@ class BaseRequest:
             print(f'Ошибка тайм-аута:\n {str(e)}')
         except requests.RequestException as e:
             print(f'Ошибка запроса: \n {str(e)}')
-        except requests.exceptions.RequestException:
+        except requests.exceptions.RequestException as e:
             print(f'Необработанная ошибка: \n {str(e)}')
             raise SystemExit(e)
         
@@ -32,7 +32,7 @@ class BaseRequest:
             print(f'Ошибка тайм-аута:\n {str(e)}')
         except requests.RequestException as e:
             print(f'Ошибка запроса: \n {str(e)}')
-        except requests.exceptions.RequestException:
+        except requests.exceptions.RequestException as e:
             print(f'Необработанная ошибка: \n {str(e)}')
             raise SystemExit(e)
 
@@ -48,6 +48,6 @@ class BaseRequest:
             print(f'Ошибка тайм-аута:\n {str(e)}')
         except requests.RequestException as e:
             print(f'Ошибка запроса: \n {str(e)}')
-        except requests.exceptions.RequestException:
+        except requests.exceptions.RequestException as e:
             print(f'Необработанная ошибка: \n {str(e)}')
             raise SystemExit(e)
